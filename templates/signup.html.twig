@@ -1,0 +1,95 @@
+{% block stylesheets %}<link href="{{ asset('css/sign.css')}}" rel="stylesheet">{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
+{% extends "base.html.twig" %}
+{% block title %}Signup Page {% endblock %}
+{% block body %}
+<div id="particles-js">
+<div class="login ">
+<h1 style="text-align: center">Create Account</h1>
+
+         <div class="profile_preview">
+        <img id="preview_image" src="{{ asset('images/profile_placeholder.jpeg')}}">
+        </div>
+
+        <div class='file_reg'>
+        <input style="display: none;" id="u_profile" type="file" name="profileImage" onchange="previewFile(this);">
+        <label class='choose' for="u_profile"><i class="fas fa-pen"></i></label>
+        </div>
+
+
+
+<form class="row d-flex justify-content-center" >
+
+    <div class="form-group  col-8" style="margin-top: 50px">
+      <label class="sr-only" for="inlineFormInputGroupUsername">Name</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white "><i class="fas fa-user"></i></div>
+        </div>
+        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Name">
+      </div>
+    </div>
+                 <div class="line col-8"></div>
+                     <div class="form-group  col-8" style="margin-top: 20px">
+      <label class="sr-only" for="inlineFormInputGroupUsername">Surname</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white "><i class="fas fa-user"></i></div>
+        </div>
+        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Surname">
+      </div>
+    </div>
+                 <div class="line col-8"></div>
+    <div class="form-group  col-8" style="margin-top: 20px">
+      <label class="sr-only" for="inlineFormInputGroupUsername">Email</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white "><i class="fas fa-envelope"></i></div>
+        </div>
+        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Email">
+      </div>
+    </div>
+                 <div class="line col-8"></div>
+     <div class="form-group  col-8" style="margin-top: 20px">
+      <label class="sr-only" for="inlineFormInputGroupUsername">Password</label>
+      <div class="input-group  ">
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white"><i class="fas fa-unlock"></i></div>
+        </div>
+        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Password">
+      </div>
+    </div>
+             <div class="line col-8"></div>
+
+
+
+    
+  <button type="submit" class="btn ">SIGNUP</button> 
+
+</form>
+  <h3 class="account" style="font-size:13px; text-align:center; margin-top:2vh;">Already have an account <a class="hov " href="/"><strong style="text-decoration:underline">Login Now!</strong></a></h3>
+</div>
+</div>
+
+    <script>
+        function previewFile(input){
+            var file = $("input[type=file]").get(0).files[0];
+            if(file){
+                var reader = new FileReader();
+                reader.onload = function(){
+                    $("#preview_image").attr("src", reader.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+
+{% endblock %}
+
+
+
+
+
+
+

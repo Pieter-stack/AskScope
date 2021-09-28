@@ -1,0 +1,191 @@
+
+   html,body{ 
+       width:100%;
+       height:100vh;
+       background:#2E2E3A;
+       float: left;
+       overflow: hidden;
+   }
+ 
+   
+  
+   
+   canvas{
+     display:block;
+     height: 100vh;
+     float: left;
+
+   }
+   
+
+   
+   
+.login{
+  background-color: #ffffff ;
+  position: absolute;
+  z-index: 3;
+  height: 80vh;
+  width: 35%;
+  float: left;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+
+
+
+}
+   
+   
+   
+   
+   /* ---- particles.js container ---- */
+   
+   #particles-js{
+     width: 100%;
+     height: 100vh;
+     background-color: #2E2E3A;
+     background-image: url('');
+     background-size: cover;
+     background-position: 100% 100%;
+     background-repeat: no-repeat;
+     float: left;
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+.line{
+background-color: black;
+  height: 1px;
+  width: 70%;
+  margin-top: -18px;
+}
+
+.left_line{
+width: 40%;
+height: 1px;
+background-color: black;
+float: left;
+margin-top: -28px;
+}
+
+.right_line{
+  width: 40%;
+  height: 1px;
+  background-color: black;
+  float: right;
+  margin-top: -28px;
+  }
+   
+   
+.container_or{
+
+  width: 70%;
+  height: 10vh;
+  float: left;
+  margin-top: 5vh;
+}   
+
+.social_media{
+  width: 70%;
+  height: 8vh;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+.twitter{
+  margin-left: 10%;
+
+}
+
+.instagram{
+  margin-left: auto;
+  margin-right: auto;
+    
+}
+.facebook{
+  margin-right: 10%;
+}
+   
+
+.twitter :hover{
+color:#FB3640 ;
+
+}
+
+.instagram :hover{
+  color:#FB3640 ;
+    
+}
+.facebook :hover{
+  color:#FB3640 ;
+}
+
+.btn{
+  width: 40%;
+  height: 50px;
+  border-radius: 0;
+  color: #ffffff;
+  margin-top: 5vh;
+  background-color: #FB3640;
+  
+}
+
+.btn:hover{
+  background-color: #ca272f;
+  
+}
+
+.hov:hover{
+  color:#FB3640 ;
+}
+
+
+
+
+a{
+  color: black;
+}
+
+@media (max-width: 1025px) {
+  /* For ipad */
+  .login{
+      background-color: #ffffff ;
+      position: absolute;
+      z-index: 3;
+      height: 65vh;
+      width: 60%;
+      float: left;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      
+      
+      
+      }
+
+
+      @media (max-width: 390px) {
+  /* For phone */
+  .login{
+      background-color: #ffffff ;
+      position: absolute;
+      z-index: 3;
+      height: 80vh;
+      width: 90%;
+      float: left;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 120px;
+  }  
+      
+}
+}
+

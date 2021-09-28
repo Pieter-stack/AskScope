@@ -1,0 +1,233 @@
+
+   html,body{ 
+    width:100%;
+    height:100vh;
+    background:#2E2E3A;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+
+canvas{
+  display:block;
+  height: 100vh;
+  float: left;
+
+}
+
+
+
+
+   
+.login{
+  background-color: #ffffff ;
+  position: absolute;
+  z-index: 3;
+  height: 80vh;
+  width: 35%;
+  float: left;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+
+
+
+}
+
+
+
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  width: 100%;
+  height: 100vh;
+  background-color: #2E2E3A;
+  background-image: url('');
+  background-size: cover;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  float: left;
+  
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.line{
+background-color: black;
+height: 1px;
+width: 70%;
+margin-top: -18px;
+}
+
+
+
+.btn{
+width: 40%;
+height: 50px;
+border-radius: 0;
+color: #ffffff;
+margin-top: 5vh;
+background-color: #FB3640;
+
+}
+
+.btn:hover{
+background-color: #ca272f;
+
+}
+
+.hov:hover{
+color:#FB3640 ;
+}
+
+
+
+a{
+color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+.profile_preview{
+    height: 150px;
+    width: 150px;
+    margin-right: auto;
+margin-left: auto;
+    border-radius: 100%; 
+
+    background-position: center;
+ background-size: contain;
+ margin-top: 5vh;
+ 
+ }
+ 
+ .profile_preview img{
+
+     background-position: center;
+     background-size: contain;
+     background-clip: content-box;
+     border-radius: 50%;
+     object-fit: contain;
+     background-position: center;
+ background-size: contain;
+ }
+ 
+
+  #preview_image_edit{
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height : 100%;
+      object-fit: cover;
+ 
+ 
+  }
+ 
+  #preview_image{
+     background-position: center;
+     background-size: cover;
+     width: 100%;
+     height : 100%;
+     object-fit: cover;
+ 
+ }
+ 
+ .file_reg{
+   
+  margin-right: auto;
+  margin-left: auto;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: #FB3640;
+  padding-left: 12px;
+  padding-top: 7px;
+  color:#ffffff ;
+  margin-top: -35px;
+  position: absolute;
+  z-index: 6;
+  margin-left: 55%;
+ }
+
+
+
+ @media (max-width: 1025px) {
+    /* For ipad */
+    .login{
+        background-color: #ffffff ;
+        position: absolute;
+        z-index: 3;
+        height: 65vh;
+        width: 60%;
+        float: left;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 60px;
+        
+        
+        
+        }
+  
+  
+        @media (max-width: 390px) {
+    /* For phone */
+    .login{
+        background-color: #ffffff ;
+        position: absolute;
+        z-index: 3;
+        height: 80vh;
+        width: 90%;
+        float: left;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 115px;
+        
+        
+        
+        }
+  
+        .profile_preview{
+      height: 100px;
+      width: 100px;
+      margin-right: auto;
+  margin-left: auto;
+      border-radius: 100%; 
+  
+      background-position: center;
+   background-size: contain;
+   margin-top: 5vh;
+   
+   }
+    .file_reg{
+     
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: #FB3640;
+    padding-left: 7px;
+    padding-top: 3px;
+    color:#ffffff ;
+    margin-top: -30px;
+    position: absolute;
+    z-index: 6;
+    margin-left: 55%;
+   }
+  }
+}
+
+
+ 

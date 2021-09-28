@@ -1,0 +1,37 @@
+{% block stylesheets %}<link href="{{ asset('css/home.css')}}" rel="stylesheet">{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
+{% extends "base.html.twig" %}
+{% block title %}Home Page {% endblock %}
+{% block nav %}
+ <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+ <div class="profile"></div>
+
+
+{% endblock %}
+
+{% block body %}
+<div class="container2">
+<div class="select_container  col-10 col-md-8">
+<div  class="item">Competition</div>
+<div  class="item">Simulation Game</div>
+<div  class="item">Retrogaming</div>
+<div  class="item">Virtual Reality</div>
+</div>
+</div>
+
+<h1 class="recent" >Recent Interactions</h1>
+<div class="container3">
+<div class="posts col-10 col-md-8"></div>
+
+</div>
+<button type="submit" class="btn ">Ask a Question?</button> 
+
+
+{% endblock %}
+
+
+
+
+
+
+

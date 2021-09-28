@@ -1,0 +1,365 @@
+
+   html,body{ 
+    width:100%;
+    height:100vh;
+    background:#2E2E3A;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+
+canvas{
+  display:block;
+  height: 100vh;
+  float: left;
+
+}
+
+
+
+
+   
+.login{
+  background-color: #ffffff ;
+  position: absolute;
+  z-index: 3;
+  height: 80vh;
+  width: 35%;
+  float: left;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -90px;
+
+
+
+}
+
+
+.center {
+    display: block;
+width: 10%;
+    position: absolute;
+    z-index: 2;
+float: left;
+margin-left: 1%;
+  }
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  width: 100%;
+  height: 100vh;
+  background-color: #2E2E3A;
+  background-image: url('');
+  background-size: cover;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  float: left;
+  
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+
+.cancel{
+    width: 42%;
+height: 50px;
+border-radius: 0;
+color: #000000;
+margin-top: 5vh;
+border: 2px solid #FB3640;
+background-color: #ffffff;
+float: left;
+margin-top: 15px;
+
+
+
+}
+
+.update{
+    width: 40%;
+    height: 50px;
+    border-radius: 0;
+    color: #ffffff;
+    margin-top: 5vh;
+    background-color: #FB3640;
+    float: left;
+
+
+}
+
+
+.group{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+
+.btn:hover{
+background-color: #ca272f;
+
+}
+
+.hov:hover{
+color:#FB3640 ;
+}
+
+
+.profile{
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    float: right;
+    margin-top: 1vh;
+    margin-right: 50px;
+   
+     }
+   
+     .fa-sign-out-alt{
+       position: absolute; 
+       right: 10px;
+       top:5vh;
+       color: #ffffff;
+     }
+   
+     .fa-sign-out-alt:hover{
+       color: #FB3640;
+     }
+
+     .line{
+        background-color: black;
+        height: 1px;
+        width: 70%;
+        margin-top: -18px;
+        }
+
+
+
+
+
+
+.profile_preview{
+    height: 150px;
+    width: 150px;
+margin-left: 3vw;
+    border-radius: 100%; 
+    background-position: center;
+ background-size: contain;
+ margin-top: 5vh;
+ 
+ }
+ 
+ .profile_preview img{
+
+     background-position: center;
+     background-size: contain;
+     background-clip: content-box;
+     border-radius: 50%;
+     object-fit: contain;
+     background-position: center;
+ background-size: contain;
+ }
+ 
+
+  #preview_image_edit{
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height : 100%;
+      object-fit: cover;
+ 
+ 
+  }
+ 
+  #preview_image{
+     background-position: center;
+     background-size: cover;
+     width: 100%;
+     height : 100%;
+     object-fit: cover;
+ 
+ }
+
+ .user_info{
+     width: 50%;
+     height: 100px;
+     float: right;
+     margin-top: 80px;
+     margin-right: 6vw;
+
+ }
+ 
+ .file_reg{
+   
+    margin-left: 8vw;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: #FB3640;
+  padding-left: 12px;
+  padding-top: 7px;
+  color:#ffffff ;
+  margin-top: -35px;
+  position: absolute;
+  z-index: 6;
+ 
+ }
+
+
+
+ @media (max-width: 1025px) {
+    /* For ipad */
+    .login{
+        background-color: #ffffff ;
+        position: absolute;
+        z-index: 3;
+        height: 65vh;
+        width: 60%;
+        float: left;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: -150px;
+        
+        
+        
+        }
+        .fa-sign-out-alt{
+            position: absolute; 
+            right: 10px;
+            top:4vh;
+            color: #ffffff;
+          }
+
+          .file_reg{
+   
+            margin-left: 13vw;
+          height: 40px;
+          width: 40px;
+          border-radius: 100%;
+          background-color: #FB3640;
+          padding-left: 12px;
+          padding-top: 7px;
+          color:#ffffff ;
+          margin-top: -35px;
+          position: absolute;
+          z-index: 6;
+         
+         }
+  
+        }
+        @media (max-width: 390px) {
+    /* For phone */
+    .login{
+        background-color: #ffffff ;
+        position: absolute;
+        z-index: 3;
+        height: 80vh;
+        width: 90%;
+        float: left;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: -110px;
+        
+        
+        
+        }
+  
+    .profile_preview{
+      height: 100px;
+      width: 100px;
+      margin-right: 15px;
+
+      border-radius: 100%; 
+  float: left;
+      background-position: center;
+   background-size: contain;
+   margin-top: 9vh;
+   
+   }
+    .file_reg{
+     
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: #FB3640;
+    padding-left: 7px;
+    padding-top: 3px;
+    color:#ffffff ;
+    margin-top: 150px;
+    position: absolute;
+    z-index: 6;
+    margin-left: 23%;
+    float: left;
+   }
+
+   .fa-sign-out-alt{
+    position: absolute; 
+    right: 10px;
+    top:3vh;
+    
+  } 
+  
+.logo{
+width: 70px;
+height: 70px;  
+margin-top: 3px;
+}
+
+  .profile{
+ background-color: rgb(255, 255, 255);
+ width: 50px;
+ height: 50px;
+ border-radius: 100%;
+ float: right;
+ margin-top: 1vh;
+ margin-right: 50px;
+
+  }
+
+  .row{
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  .cancel{
+    width: 42%;
+height: 50px;
+border-radius: 0;
+color: #000000;
+margin-top: 5vh;
+border: 2px solid #FB3640;
+background-color: #ffffff;
+float: left;
+margin-top: 15px;
+
+
+
+}
+
+.update{
+    width: 40%;
+    height: 50px;
+    border-radius: 0;
+    color: #ffffff;
+    margin-top: 5vh;
+    background-color: #FB3640;
+    float: left;
+    margin-top: 5px;
+
+
+}
+
+}
+
+
+ 
