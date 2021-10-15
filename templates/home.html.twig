@@ -3,13 +3,19 @@
 {% extends "base.html.twig" %}
 {% block title %}Home Page {% endblock %}
 {% block nav %}
- <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+ <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
  <div class="profile"></div>
 
 
 {% endblock %}
 
 {% block body %}
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.id }}
+        </div>
+    {% endif %}
+
 <div class="container2">
 <div class="select_container  col-10 col-md-8">
 <div  class="item">Competition</div>
@@ -25,7 +31,7 @@
 
 </div>
 <button type="submit" class="btn ">Ask a Question?</button> 
-
+{# <a href="{{ path('edit', {'id': user_profile.id}) }}">edit</a> #}
 
 {% endblock %}
 

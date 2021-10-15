@@ -89,4 +89,49 @@ margin-left: 1%;
       }
   }
 
-  
+
+  .container2{
+      width: 80%;
+      height: 60vh;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #484855;
+
+
+  }
+  .back{
+      color: #ffffff;
+      font-size: 20px;
+      margin-left: 1%;
+
+margin-bottom: 10px;
+      float: left;
+  }
+
+  .backBtn{
+    color: #ffffff;
+    margin-left: 10%;
+    width: 30px;
+    height: 30px;
+    margin-top: -2px ;
+    margin-bottom: 2px;
+    float: left;
+    border: 2px solid #ffffff;
+    border-radius: 100%;
+
+  }
+
+  .container3{
+      width: 100%;
+      margin-top: 50px;
+
+  }
+
+  .question1{
+      color: #ffffff;
+      margin-top: 2%;
+      float: left;
+      margin-left: 5%;
+      font-size: 20px;
+  }

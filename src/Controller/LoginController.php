@@ -8,12 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class LoginController extends AbstractController{
 
         
-            /**
-             **
-             *@Route("/",name="index")
-             */
+            // /**
+            //  **
+            //  *@Route("/",name="index")
+            //  */
 
             public function Login(){
+
+
 
             $model = array();
             $view = 'login.html.twig';
