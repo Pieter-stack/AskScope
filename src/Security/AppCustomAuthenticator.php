@@ -15,8 +15,19 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\PassportInterface;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+<<<<<<< Updated upstream
 
 class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
+=======
+<<<<<<< HEAD
+use Symfony\Component\Security\Guard\PasswordAuthenticatedInterface;
+
+class AppCustomAuthenticator extends AbstractLoginFormAuthenticator implements PasswordAuthenticatedInterface
+=======
+
+class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
+>>>>>>> f2b4f303d7728d7327154883eb44436ed74bb511
+>>>>>>> Stashed changes
 {
     use TargetPathTrait;
 
@@ -52,7 +63,15 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 
         // For example:
         //return new RedirectResponse($this->urlGenerator->generate('some_route'));
+<<<<<<< Updated upstream
         return new RedirectResponse($this->urlGenerator->generate('user_index'));
+=======
+<<<<<<< HEAD
+        return new RedirectResponse($this->urlGenerator->generate('home'));
+=======
+        return new RedirectResponse($this->urlGenerator->generate('user_index'));
+>>>>>>> f2b4f303d7728d7327154883eb44436ed74bb511
+>>>>>>> Stashed changes
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
@@ -60,4 +79,18 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+       /**
+     * Used to upgrade (rehash) the user's password automatically over time.
+     */
+    public function getPassword($credentials): ?string
+    {
+        return $credentials['password'];
+    }
+=======
+>>>>>>> f2b4f303d7728d7327154883eb44436ed74bb511
+>>>>>>> Stashed changes
 }

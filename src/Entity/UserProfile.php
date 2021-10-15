@@ -1,6 +1,14 @@
 <?php
 
 namespace App\Entity;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+=======
+>>>>>>> f2b4f303d7728d7327154883eb44436ed74bb511
+>>>>>>> Stashed changes
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 /**
@@ -43,6 +51,31 @@ class UserProfile implements UserInterface{
     private $profileUrl;
 
     /**
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    * @ORM\Column(type="integer", length=255, name="rep", nullable=false,options={"default" : 1000})
+    */
+    private $rep = 1000;
+
+    /**
+    * @ORM\Column(type="integer" , length=255, name="access", nullable=false, options={"default" : 0})
+    */
+    private $access = 0;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Question::class, mappedBy="user_id")
+     */
+    private $questions;
+
+
+    public function __construct()
+    {
+        $this->question = new ArrayCollection();
+        $this->questions = new ArrayCollection();
+    }
+=======
+>>>>>>> Stashed changes
     * @ORM\Column(type="string", length=255, nullable=true)
     */
     private $rep;
@@ -51,6 +84,10 @@ class UserProfile implements UserInterface{
     * @ORM\Column(type="integer", length=255, nullable=true)
     */
     private $access;
+<<<<<<< Updated upstream
+=======
+>>>>>>> f2b4f303d7728d7327154883eb44436ed74bb511
+>>>>>>> Stashed changes
 
 
     public function getId(): ?int
@@ -162,9 +199,50 @@ public function getSalt()
 
     public function getUsername()
     {
+<<<<<<< Updated upstream
     }
 
 
+=======
+<<<<<<< HEAD
+        return $this->name;
+    }
+
+    /**
+     * @return Collection|Question[]
+     */
+    public function getQuestions(): Collection
+    {
+        return $this->questions;
+    }
+
+    public function addQuestion(Question $question): self
+    {
+        if (!$this->questions->contains($question)) {
+            $this->questions[] = $question;
+            $question->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuestion(Question $question): self
+    {
+        if ($this->questions->removeElement($question)) {
+            // set the owning side to null (unless already changed)
+            if ($question->getUserId() === $this) {
+                $question->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+=======
+    }
+
+
+>>>>>>> f2b4f303d7728d7327154883eb44436ed74bb511
+>>>>>>> Stashed changes
 
 
 

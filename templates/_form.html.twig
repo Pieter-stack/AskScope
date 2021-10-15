@@ -1,3 +1,15 @@
+{# {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+
+
+
+
+
+
+
 {% block stylesheets %}<link href="{{ asset('css/sign.css')}}" rel="stylesheet">{% endblock %}
 {% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
 {% extends "base.html.twig" %}
@@ -6,14 +18,14 @@
 <div id="particles-js">
 <div class="login ">
 <h1 style="text-align: center">Create Account</h1>
-
+{{form_start(form,{'attr':{'novalidate':'novalidate'}})}}
          <div class="profile_preview">
         <img id="preview_image" src="{{ asset('images/profile_placeholder.jpeg')}}">
-
         </div>
 
         <div class='file_reg'>
-        <input style="display: none;" id="u_profile" type="file" name="profileImage" onchange="previewFile(this);">
+        {{form_widget(form.profileUrl,{'attr':{'class':'form-control border-0','placeholder':'Profile Url'  ,'id': 'u_profile'  ,name:"profileImage", onchange:"previewFile(this);"}})}}
+         {# <input style="display: none;" id="u_profile" type="file" name="profileImage" onchange="previewFile(this);">  #}
         <label class='choose' for="u_profile"><i class="fas fa-pen"></i></label>
         </div>
 
@@ -22,50 +34,57 @@
 <form class="row d-flex justify-content-center" >
 
     <div class="form-group  col-8" style="margin-top: 50px">
-      <label class="sr-only" for="inlineFormInputGroupUsername">Name</label>
-      <div class="input-group">
+
+      <div class="input-group " style='margin-left:25%'>
         <div class="input-group-prepend">
-          <div class="input-group-text border-0 bg-white "><i class="fas fa-user"></i></div>
+          <div class="input-group-text border-0 bg-white"   ><i class="fas fa-user"></i></div>
         </div>
-        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Name">
+        {{form_widget(form.name,{'attr':{'class':'form-control border-0','placeholder':'Name',style:'margin-left:auto; margin-right:auto;'}})}}
       </div>
     </div>
-                 <div class="line col-8"></div>
+                 <div class="line col-8 "style='margin-left:15%;'></div>
                      <div class="form-group  col-8" style="margin-top: 20px">
-      <label class="sr-only" for="inlineFormInputGroupUsername">Surname</label>
-      <div class="input-group">
+      <div class="input-group" style='margin-left:25%'>
         <div class="input-group-prepend">
           <div class="input-group-text border-0 bg-white "><i class="fas fa-user"></i></div>
         </div>
-        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Surname">
+{{form_widget(form.surname,{'attr':{'class':'form-control border-0','placeholder':'Surname'}})}}
       </div>
     </div>
-                 <div class="line col-8"></div>
+                 <div class="line col-8" style='margin-left:15%;'></div>
     <div class="form-group  col-8" style="margin-top: 20px">
-      <label class="sr-only" for="inlineFormInputGroupUsername">Email</label>
-      <div class="input-group">
+      <div class="input-group" style='margin-left:25%'>
         <div class="input-group-prepend">
           <div class="input-group-text border-0 bg-white "><i class="fas fa-envelope"></i></div>
         </div>
-        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Email">
+{{form_widget(form.email,{'attr':{'class':'form-control border-0 ','placeholder':'Email'}})}}
       </div>
     </div>
-                 <div class="line col-8"></div>
+                 <div class="line col-8" style='margin-left:15%;'></div>
      <div class="form-group  col-8" style="margin-top: 20px">
-      <label class="sr-only" for="inlineFormInputGroupUsername">Password</label>
-      <div class="input-group  ">
+      <div class="input-group  " style='margin-left:25%'>
         <div class="input-group-prepend">
           <div class="input-group-text border-0 bg-white"><i class="fas fa-unlock"></i></div>
         </div>
-        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Password">
+        {{form_widget(form.password,{'attr':{'class':'form-control border-0','placeholder':'Password'}})}}
       </div>
     </div>
-             <div class="line col-8"></div>
+             <div class="line col-8" style='margin-left:15%;'></div>
 
 
+
+
+
+
+ {# {{form_widget(form.profileUrl,{'attr':{'class':'form-control border-0','placeholder':'Profile Url'}})}}  #}
+ {{form_widget(form.rep,{'attr':{'class':'form-control border-0','placeholder':'Rep', style:'display:none;'}})}}
+{{form_widget(form.access,{'attr':{'class':'form-control border-0','placeholder':'Access' ,style:'display:none;'}})}} 
+<button class="btn" style='margin-left:30%;'>{{ button_label|default('Save') }}</button> 
+{{form_end(form)}}
 
     
-  <button type="submit" class="btn ">SIGNUP</button> 
+  {# <button type="submit" class="btn ">SIGNUP</button> #}
+
 
 </form>
   <h3 class="account" style="font-size:13px; text-align:center; margin-top:2vh;">Already have an account <a class="hov " href="/"><strong style="text-decoration:underline">Login Now!</strong></a></h3>
@@ -87,6 +106,7 @@
 
 
 {% endblock %}
+
 
 
 

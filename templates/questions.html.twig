@@ -1,4 +1,4 @@
-{% block stylesheets %}<link href="{{ asset('css/questions.css')}}" rel="stylesheet">{% endblock %}
+{% block stylesheets %}<link href="{{ asset('css/question.css')}}" rel="stylesheet">{% endblock %}
 {% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
 {% extends "base.html.twig" %}
 {% block title %}Questions Page {% endblock %}
@@ -10,11 +10,28 @@
 {% endblock %}
 
 {% block body %}
+<div class="container3">
+<div class="backBtn"></div>
+<h1 class="back">Back to landing page</h1>
+<div class="container2">
+<h1 class="question1">Ask a Question?</h1>
+{{form_start(form,{'attr':{'novalidate':'novalidate'}})}}
+{# {{form_widget(form.userId, {attr: {'value': {{ app.user.id }}})}} #}
+ {# {{form_widget(form.userId, { 'attr': {'value': app.user.id  } }) }}  #}
+<button class="btn" style='margin-left:30%;'>{{ button_label|default('Ask') }}</button> 
+{{form_end(form)}}
 
-
-
+<h1>{{app.user.id}}</h1>
+</div>
+</div>
 
 {% endblock %}
+
+
+
+
+
+
 
 
 
