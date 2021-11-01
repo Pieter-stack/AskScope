@@ -6,6 +6,54 @@ html,body{
 
 }
 
+.back{
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 1%;
+
+margin-bottom: 10px;
+  float: left;
+}
+
+.backBtn{
+color: #ffffff;
+margin-left: 10%;
+width: 30px;
+height: 30px;
+margin-top: -2px ;
+margin-bottom: 2px;
+float: left;
+border: 2px solid #ffffff;
+border-radius: 100%;
+
+}
+.container3{
+    width: 100%;
+    margin-top: 50px;
+    float: left;
+}
+.container2{
+    width: 80%;
+    margin-left: 10%;
+    min-height: 800px;
+    margin-top: 20px;
+    background-color: #484855;
+    float: left;
+}
+.userP{
+    width: 40%;
+    height: 100px;
+    background-color: aqua;
+    float: left;
+}
+
+.question{
+    width: 100%;
+    height: auto;
+    background-color: rgb(84, 94, 94);
+    float: left;  
+}
+
 
 .center {
     display: block;

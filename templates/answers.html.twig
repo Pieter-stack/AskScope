@@ -1,16 +1,75 @@
-{% block stylesheets %}<link href="{{ asset('css/answers.css')}}" rel="stylesheet">{% endblock %}
+{% block stylesheets %}<link href="{{ asset('css/answer.css')}}" rel="stylesheet">{% endblock %}
 {% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
 {% extends "base.html.twig" %}
 {% block title %}Answers Page {% endblock %}
 {% block nav %}
  <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
- <div class="profile"></div>
+ <img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" />
 
 
 {% endblock %}
 
-{% block body %}
 
+{% block body %}
+<div class="container3">
+<a href="/home"><div class="backBtn"><i class="fas fa-chevron-left" style="margin-left:7px;"></i></div></a>
+<h1 class="back">Back to landing page</h1>
+
+</div>
+<div class="container2">
+<div class="userP">
+<div class="votes"></div>
+<img class="postprofile1" src="{{ asset( '/profileUrl/' ~ questions.userId.profileUrl   ) }}" />
+  <h1 class="username">{{ questions.userId.name}}</h1>  
+</div>
+
+<div class="question">
+ <h1 class="questionText">{{ questions.questionText}}</h1>
+ </div>
+<div class="questionImg">
+<img class="Image" src="{{ asset( '/questionUrl/' ~ questions.questionImg  ) }} " style='object-fit: contain' />
+
+ </div>
+<i class="fas fa-comment"> <strong style="color:#F5B82E;">{{ questions.comments|length }}</strong></i>
+
+ <div class="postComment">
+ <div class="line"></div>
+ <div class="postCom">
+ <img class="postprofile2" src="{{ asset( '/profileUrl/' ~ questions.userId.profileUrl   ) }}" />
+ {{form_start(form,{'attr':{'novalidate':'novalidate'}})}}
+{{form_widget(form.comments, { 'attr': {'class': 'form-control dropdown', 'placeholder': 'Post a comment', 'style': 'margin: 10px; float:left; width:60%; background-color:#484855; color:#ffffff; height:6vh;resize: none; border:none; font-size:20px' } }) }}
+ {{form_widget(form.userId, { 'attr': {'class': 'form-control', 'placeholder': 'userid', 'style': 'margin: 10px; display: none', 'value' : app.user.id } }) }}
+{{form_widget(form.questionId, { 'attr': {'class': 'form-control', 'placeholder': 'userid', 'style': 'margin: 10px; display: none', 'value' : questions.id } }) }}
+<input name="comment[userId]" id="comment_userId" value={{app.user.id}} style="display:none;">
+<input name="comment[questionId]" id="comment_questionId" value={{questions.id}} style="display:none;">
+
+
+<button class="btn" >{{ button_label|default('POST') }}</button> 
+ {{form_end(form)}}
+ </div>
+ <div class="line"></div>
+
+
+ 
+ </div>
+ {% for answer in questions.comments %} 
+ <div class="comment">
+   <div class="contain">
+     <img class="postprofile3" src="{{ asset( '/profileUrl/' ~ answer.userId.profileUrl  ) }}" />
+     <i class="fas fa-check"></i>
+      </div>
+        <h1 class="names">{{ answer.userId.name}}</h1>
+  <h1 class="commenttext">{{ answer.comments}}</h1> 
+  <div class="vote">
+<i class="fas fa-arrow-up"></i>
+<h1 class="upvote">{{ answer.upvotes }} </h1>
+<i class="fas fa-arrow-down"></i>
+<h1 class="downvote"> {{  answer.downvotes}}</h1>
+ </div>
+ </div>
+  <div class="line"></div>
+   {% endfor %}
+</div>
 
 
 

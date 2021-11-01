@@ -1,10 +1,10 @@
-{% block stylesheets %}<link href="{{ asset('css/admin.css')}}" rel="stylesheet">{% endblock %}
-{% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
+{% block stylesheets %}<link href="{{ asset('css/adm.css')}}" rel="stylesheet">{% endblock %}
+
 {% extends "base.html.twig" %}
 {% block title %}Admin Page {% endblock %}
 {% block nav %}
  <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
- <div class="profile"></div>
+ <img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" />
 
 
 {% endblock %}
@@ -13,6 +13,95 @@
 
 
 
+
+<h1 class="user_h1">Users</h1>
+<h1 class="banuser_h1">Banned Users</h1>
+<div class="select">
+<div id="user" onclick="Users()" class="user">Users</div>
+<div id="banuser" onclick="BannedUsers()" class="banuser">Banned Users</div>
+</div>
+<div id="userblock1" class="users">
+{% for user in user %}
+<div  class="userblock">
+ <img class="profileuser" src="{{ asset( '/profileUrl/' ~ user.profileUrl ) }}" />
+<h1 class="username" >{{user.name}}</h1>
+<a href="{{ path('history', {'id': user.id}) }}"><h1 class="view" >View History</h1></a>
+
+
+<a href="{{ path('deladmin', {'id': user.id}) }}"><div onclick="return confirm('Are you sure you want to delete this user with id: {{user.id}}');" class="delete">DELETE</div></a>
+<a href="{{ path('banadmin', {'id': user.id}) }}"><div class="ban">BAN</div></a>
+</div>
+
+{% endfor %}
+</div>
+
+<div id="userblock2" class="banned_users">
+{% for ban in ban %}
+<div class="userblock">
+ <img class="profileuser" src="{{ asset( '/profileUrl/' ~ ban.profileUrl ) }}" />
+<h1 class="username" >{{ban.name}}</h1>
+<a href="{{ path('history', {'id': ban.id}) }}"><h1 class="view" >View History</h1></a>
+<a href="{{ path('deladmin', {'id': ban.id}) }}"><div onclick="return confirm('Are you sure you want to delete this user with id: {{ban.id}}');" class="delete">DELETE</div></a>
+<a href="{{ path('unadmin', {'id': ban.id}) }}"><div class="ban">UNBAN</div></a>
+
+
+</div>
+
+{% endfor %}
+</div>
+
+
+ {% block javascripts %}
+<script>
+
+window.addEventListener('resize', () => {
+  var y = document.getElementById("userblock2");
+  var x = document.getElementById("userblock1");
+
+      y.style.display = "block";
+     x.style.display = "block";
+
+      var w = window.innerWidth;
+       if (w < "390") {
+      y.style.display = "none";
+
+  }
+
+})
+
+function Users() {
+
+  var y = document.getElementById("userblock2");
+  var x = document.getElementById("userblock1");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+   x.style.display = "none";
+  } else {
+    y.style.display = "none";
+     x.style.display = "block";
+  }
+
+}
+
+
+function BannedUsers() {
+
+ var y = document.getElementById("userblock1");
+  var x = document.getElementById("userblock2");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+       x.style.display = "none";
+  } else {
+    y.style.display = "none";
+         x.style.display = "block";
+  }
+}
+
+
+
+
+</script>
+{% endblock %}
 
 {% endblock %}
 

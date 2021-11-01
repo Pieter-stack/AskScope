@@ -1,0 +1,214 @@
+html,body{ 
+    width:100%;
+    height:100vh;
+    background:#2E2E3A;
+    float: left;
+
+}
+
+.container3{
+  width: 100%;
+  margin-top: 50px;
+
+}
+
+.back{
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 1%;
+
+margin-bottom: 10px;
+  float: left;
+}
+
+.backBtn{
+  color: #ffffff;
+  margin-left: 10%;
+  width: 30px;
+  height: 30px;
+  margin-top: -2px ;
+  margin-bottom: 2px;
+  float: left;
+  border: 2px solid #ffffff;
+  border-radius: 100%;
+
+}
+
+.container2{
+  width: 80%;
+  height: 10vh;
+display: flex;
+margin-right: auto;
+margin-left: auto;
+
+
+
+}
+
+.container4{
+  width: 80%;
+margin-right: 10%;
+margin-left: 10%;
+background-color: #484855;
+margin-top: 10px;
+height: auto;
+float: left;
+
+
+
+
+}
+
+.text1{
+  color: #ffffff;
+  float: left;
+  width: 93%;
+
+  word-wrap: break-word;
+  font-size:20px;
+  min-height: 20px;
+  margin-left: 5px;
+  margin-top:10px;
+}
+
+.text2{
+  color: #ffffff;
+  float: left;
+  width: 93%;
+
+  word-wrap: break-word;
+  font-size:20px;
+  min-height: auto;
+  margin-left: 4%;
+  margin-top:10px;
+}
+
+
+
+.line{
+  width: 95%;
+  float: left;
+  height: 2px;
+  margin-top: 5px;
+  background-color: #ffffff;
+  margin-left: 2.5%;
+  margin-right: auto;
+}
+
+
+
+.profilehistory{
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background-position: center;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 20px;
+  float: left;
+}
+
+
+.center {
+    display: block;
+width: 10%;
+    position: absolute;
+    z-index: 2;
+float: left;
+margin-left: 1%;
+  }
+
+  .profile{
+ background-color: rgb(255, 255, 255);
+ width: 100px;
+ height: 100px;
+ border-radius: 100%;
+ float: right;
+ margin-top: 1vh;
+ margin-right: 50px;
+
+  }
+
+  .fa-sign-out-alt{
+    position: absolute; 
+    right: 10px;
+    top:5vh;
+  }
+
+  .fa-sign-out-alt:hover{
+    color: #FB3640;
+  }
+
+  .logo{
+    background:none; 
+    float: left;
+  }
+
+  
+@media (max-width: 1025px) {
+    /* For ipad */
+
+    .text1{
+      color: #ffffff;
+      float: left;
+      width: 80%;
+    
+      word-wrap: break-word;
+      font-size:20px;
+      min-height: 20px;
+      margin-left: 5px;
+      margin-top:10px;
+    }
+
+
+    .fa-sign-out-alt{
+        position: absolute; 
+        right: 10px;
+        top:4vh;
+      }
+  
+}
+        @media (max-width: 390px) {
+    /* For phone */
+
+
+    .text1{
+      color: #ffffff;
+      float: left;
+      width: 70%;
+    
+      word-wrap: break-word;
+      font-size:20px;
+      min-height: 20px;
+      margin-left: 5px;
+      margin-top:10px;
+    }
+
+
+
+    .fa-sign-out-alt{
+        position: absolute; 
+        right: 10px;
+        top:3vh;
+        
+      } 
+      
+   .logo{
+    width: 70px;
+    height: 70px;  
+    margin-top: 3px;
+   }
+    
+      .profile{
+     background-color: rgb(255, 255, 255);
+     width: 50px;
+     height: 50px;
+     border-radius: 100%;
+     float: right;
+     margin-top: 1vh;
+     margin-right: 50px;
+    
+      }
+  }
+
+  

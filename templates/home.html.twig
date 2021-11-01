@@ -1,15 +1,35 @@
-{% block stylesheets %}<link href="{{ asset('css/home.css')}}" rel="stylesheet">{% endblock %}
-{% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
+{% block stylesheets %}<link href="{{ asset('css/homepa.css')}}" rel="stylesheet">{% endblock %}
+
 {% extends "base.html.twig" %}
 {% block title %}Home Page {% endblock %}
 {% block nav %}
- <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
- <div class="profile"></div>
+
+ <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+     {% if app.user.access == 1 %}
+           <a href="{{ path('admin') }}"><div class="admin">Admin Only</div></a>
+    {% endif %}
+ <a href="{{ path('edit', {'id': app.user.id}) }}"><img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" /></a>
 
 
 {% endblock %}
 
 {% block body %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            {# You are logged in as {{ app.user.id }} #}
+            {# {% for question in questions %} 
+            {{ question.userId.name}}     
+            {{ question.questionText }}    
+            {{ question.category }} 
+            {{ question.downvotes }} 
+            {{ question.upvotes }} 
+            {{ question.questionImg }} 
+             {% endfor %} #}
+            
+        </div>
+    {% endif %}
+
 <div class="container2">
 <div class="select_container  col-10 col-md-8">
 <div  class="item">Competition</div>
@@ -19,16 +39,117 @@
 </div>
 </div>
 
-<h1 class="recent" >Recent Interactions</h1>
+<h1 class="recent" >Recent Posts</h1>
 <div class="container3">
-<div class="posts col-10 col-md-8"></div>
+<div class="posts col-10 col-md-8">
+{% for question in questions %} 
+<div class="post">
+
+
+<img class="postprofile" src="{{ asset( '/profileUrl/' ~ question.userId.profileUrl   ) }}" />
+<div class="contain">
+<a href="{{ path('answers', {'id': question.id}) }}"><h1 class="username">{{ question.questionText }} </h1></a>
+<h1 class="question"> {{ question.userId.name}}</h1>
+</div>
+<div class="votes">
+<i class="fas fa-arrow-up like"  data-id="{{question.id}}"></i>
+<h1  id="upvote" class="upvote">{{ question.upvotes }} </h1>
+<i class="fas fa-arrow-down dislike" data-id="{{question.id}}" >  </i>
+<h1 id="downvote" class="downvote" > {{ question.downvotes }}   </h1>
+<i class="fas fa-comment"></i>
+<h1 class="comment"> {{ question.comments|length }}</h1>
+</div>
+</div>
+ {% endfor %}
+</div>
 
 </div>
-<button type="submit" class="btn ">Ask a Question?</button> 
-
+<a href="/question"><button type="submit" class="btn ">Ask a Question?</button> </a>
 
 {% endblock %}
 
+
+{% block javascripts %}
+
+<script>
+
+$(document).ready(function(){
+
+    $(".dislike").on("click", function(event){
+         
+         var currentCount = parseInt($(this).next().html()); 
+        //  $(this).css("pointer-events", "none");
+          $(this).css("color", "#D3D3D3");
+        var questionId = $(this).data("id");
+            
+         $.ajax({
+            url: '/home',
+            type: 'POST',
+           data: {id:questionId},
+            dataType: 'text',
+            async: true,
+
+           success: function(data, status){
+               console.log(data);
+          //  parseInt(document.getElementById("downvote").innerHTML = data);
+
+            },
+            error: function(xhr, textStatus, errorThrown){
+                console.log("error" + error);
+           }
+        });
+        $(this).next().html(currentCount + 1); 
+      
+        console.log(currentCount);
+        console.log(questionId);
+
+    });
+
+
+    $(".like").on("click", function(event){
+         
+         var currentCount = parseInt($(this).next().html()); 
+         $(this).css("pointer-events", "none");
+          $(this).css("color", "#D3D3D3");
+        var LikeId = $(this).data("id");
+            
+        $.ajax({
+          url: '/home',
+           type: 'POST',
+          data: {id:LikeId},
+         dataType: 'text',
+        async: true,
+
+           success: function(data, status){
+               console.log(data);
+         //   parseInt(document.getElementById("downvote").innerHTML = data);
+
+           },
+            error: function(xhr, textStatus, errorThrown){
+               console.log("error" + error);
+           }
+        });
+        
+        $(this).next().html(currentCount + 1); 
+      
+        console.log(currentCount);
+        console.log(LikeId);
+
+    });
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+{% endblock %}
 
 
 
