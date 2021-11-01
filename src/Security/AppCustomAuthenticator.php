@@ -70,4 +70,3 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator implements P
     {
         return $credentials['password'];
     }
-}
