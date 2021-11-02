@@ -186,7 +186,7 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 
 ### Wireframes
-
+   <img src="images/wireframes.PNG" alt="website" width="100%" height="500">
 <!--![image7][image7]-->
 
 ### User-flow
@@ -201,9 +201,16 @@ The `Development Process` is the technical implementations and functionality don
 
 ### Implementation
 
+
+1. Firstly I made the Login and Register page, where the user can signup and be posted to the db and the login to the website I also added a logout feature.
+2. I then did the CRUD functionality of editing user data and posting questions and comments. I later did the CRUD for the Admin where you can delete , ban and unban users.
+3. For the AJAX requests, I used them to upvote and downvote comments and questions as well as mark comments as an answer.
+4. I then Finished the project off with some styling and uploaded it to heroku.
+
+
 #### Challenges
 
-Challenges will be listed here in the near future.
+Had issues with deploying to heroku but got it sorted at the end.
 
 
 <!-- MOCKUPS -->
