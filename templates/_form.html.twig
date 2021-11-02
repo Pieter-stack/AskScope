@@ -1,0 +1,114 @@
+{# {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+
+
+
+
+
+
+
+{% block stylesheets %}<link href="{{ asset('css/sign.css')}}" rel="stylesheet">{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
+{% extends "base.html.twig" %}
+{% block title %}Signup Page {% endblock %}
+{% block body %}
+<div id="particles-js">
+<div class="login ">
+<h1 style="text-align: center; margin-top:40px;">Create Account</h1>
+{{form_start(form,{'attr':{'novalidate':'novalidate'}})}}
+         <div class="profile_preview">
+        <img id="preview_image" src="{{ asset('images/profile_placeholder.jpeg')}}">
+        </div>
+
+        <div class='file_reg'>
+        {{form_widget(form.profileUrl,{'attr':{'class':'form-control border-0','placeholder':'Profile Url'  ,'id': 'u_profile','style':'position:absolute; z-index:2; opacity:0;'  ,name:"profileImage", onchange:"previewFile(this);"}})}}
+         {# <input style="display: none;" id="u_profile" type="file" name="profileImage" onchange="previewFile(this);">  #}
+        <label class='choose' for="u_profile"><i class="fas fa-pen"></i></label>
+        </div>
+
+
+
+<form class="row d-flex justify-content-center" >
+
+    <div class="form-group  col-8" style="margin-top: 50px">
+
+      <div class="input-group " style='margin-left:25%'>
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white"   ><i class="fas fa-user"></i></div>
+        </div>
+        {{form_widget(form.name,{'attr':{'class':'form-control border-0','placeholder':'Name',style:'margin-left:auto; margin-right:auto;'}})}}
+      </div>
+    </div>
+                 <div class="line col-8 "style='margin-left:15%;'></div>
+                     <div class="form-group  col-8" style="margin-top: 20px">
+      <div class="input-group" style='margin-left:25%'>
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white "><i class="fas fa-user"></i></div>
+        </div>
+{{form_widget(form.surname,{'attr':{'class':'form-control border-0','placeholder':'Surname'}})}}
+      </div>
+    </div>
+                 <div class="line col-8" style='margin-left:15%;'></div>
+    <div class="form-group  col-8" style="margin-top: 20px">
+      <div class="input-group" style='margin-left:25%'>
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white "><i class="fas fa-envelope"></i></div>
+        </div>
+{{form_widget(form.email,{'attr':{'class':'form-control border-0 ','placeholder':'Email'}})}}
+      </div>
+    </div>
+                 <div class="line col-8" style='margin-left:15%;'></div>
+     <div class="form-group  col-8" style="margin-top: 20px">
+      <div class="input-group  " style='margin-left:25%'>
+        <div class="input-group-prepend">
+          <div class="input-group-text border-0 bg-white"><i class="fas fa-unlock"></i></div>
+        </div>
+        {{form_widget(form.password,{'attr':{'class':'form-control border-0','placeholder':'Password'}})}}
+      </div>
+    </div>
+             <div class="line col-8" style='margin-left:15%;'></div>
+
+
+
+
+
+
+ {# {{form_widget(form.profileUrl,{'attr':{'class':'form-control border-0','placeholder':'Profile Url'}})}}  #}
+ {{form_widget(form.rep,{'attr':{'class':'form-control border-0','placeholder':'Rep', style:'display:none;'}})}}
+{{form_widget(form.access,{'attr':{'class':'form-control border-0','placeholder':'Access' ,style:'display:none;'}})}} 
+<button class="btn" style='margin-left:30%;'>{{ button_label|default('SIGN UP') }}</button> 
+{{form_end(form)}}
+
+    
+
+</form>
+  <h3 class="account" style="font-size:13px; text-align:center; margin-top:2vh;">Already have an account <a class="hov " href="/"><strong style="text-decoration:underline">Login Now!</strong></a></h3>
+</div>
+</div>
+
+    <script>
+        function previewFile(input){
+            var file = $("input[type=file]").get(0).files[0];
+            if(file){
+                var reader = new FileReader();
+                reader.onload = function(){
+                    $("#preview_image").attr("src", reader.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

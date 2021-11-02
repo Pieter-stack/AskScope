@@ -4,7 +4,7 @@
 {% block title %}Signup Page {% endblock %}
 {% block nav %}
  <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
- <div class="profile"></div>
+ <img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" />
 
 
 {% endblock %}
@@ -27,7 +27,7 @@
 
 
 
-<form class="row d-flex justify-content-center" >
+<form action="{{ path('index') }}" method="post"  class="row d-flex justify-content-center" >
 
     <div class="form-group  col-8" style="margin-top: 50px">
       <label class="sr-only" for="inlineFormInputGroupUsername">Name</label>
@@ -35,7 +35,7 @@
         <div class="input-group-prepend">
           <div class="input-group-text border-0 bg-white "><i class="fas fa-user"></i></div>
         </div>
-        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Name">
+        <input type="text" class="form-control border-0 "  name="name"   id="inlineFormInputGroupUsername" placeholder="Name">
       </div>
     </div>
                  <div class="line col-8"></div>
@@ -45,7 +45,7 @@
         <div class="input-group-prepend">
           <div class="input-group-text border-0 bg-white "><i class="fas fa-user"></i></div>
         </div>
-        <input type="text" class="form-control border-0 " id="inlineFormInputGroupUsername" placeholder="Surname">
+        <input type="text" class="form-control border-0 "  id="inlineFormInputGroupUsername" placeholder="Surname">
       </div>
     </div>
                  <div class="line col-8"></div>

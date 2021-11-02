@@ -15,6 +15,12 @@ class SignController extends AbstractController{
 
             public function Login(){
 
+
+                $user = $this->getUser();
+                if($user == null){
+                   return $this->redirectToRoute('app_login');
+                }
+
             $model = array();
             $view = 'signup.html.twig';
 

@@ -8,14 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class LoginController extends AbstractController{
 
         
-            /**
-             **
-             *@Route("/",name="index")
-             */
+            // /**
+            //  **
+            //  *@Route("/",name="index")
+            //  */
 
             public function Login(){
 
-            $model = array();
+                $user = $this->getUser();
+                 if($user == null){
+                    return $this->redirectToRoute('app_login');
+                 }
+ 
+
+
+                $model = array();
             $view = 'login.html.twig';
 
 

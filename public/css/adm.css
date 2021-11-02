@@ -1,0 +1,285 @@
+html,body{ 
+    width:100%;
+    height:100vh;
+    background:#2E2E3A;
+    float: left;
+
+}
+
+
+
+
+.users{
+  width: 46%;
+  height: auto;
+  float: left;
+  margin-left: 4%;
+  margin-top: 10px;
+}
+
+.banned_users{
+  width: 46%;
+  height: auto;
+
+  float: left;
+  margin-right: 4%;
+  margin-top: 10px;
+}
+
+.user_h1{
+  font-size: 4vh;
+  color: #ffffff;
+  float: left;
+  margin-left: 5%;
+  
+}
+
+.banuser_h1{
+  font-size: 4vh;
+  color: #ffffff;
+  margin-left: 50%;
+}
+
+.userblock{
+  width: 440px;
+  height: 180px;
+  background-color: #484855;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+
+.profileuser{
+  background-color: rgb(255, 255, 255);
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  float: left;
+  margin-top: 40px;
+  margin-left: 20px;
+  
+}
+
+.username{
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 50px;
+  float: left;
+
+  width: 60%;
+}
+
+.view{
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 300;
+  float: left;
+  margin-top: 90px;
+  margin-left: -260px;
+}
+
+
+
+
+.ban{
+  border: 2px solid #FB3640;
+  background-color: none;
+  width: 100px;
+  height: 40px;
+  float: right;
+  color: #ffffff;
+  margin-top: 40px;
+  margin-right: 5px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.delete{
+  background-color: #FB3640;
+  border: none;
+  width: 100px;
+  height: 40px;
+  float: right;
+  color: #ffffff;
+  margin-top: 40px;
+  margin-right: 5px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 3px;
+}
+
+
+.center {
+    display: block;
+width: 10%;
+    position: absolute;
+    z-index: 2;
+float: left;
+margin-left: 1%;
+  }
+
+  .profile{
+ background-color: rgb(255, 255, 255);
+ width: 100px;
+ height: 100px;
+ border-radius: 100%;
+ float: right;
+ margin-top: 1vh;
+ margin-right: 50px;
+
+  }
+
+  .fa-sign-out-alt{
+    position: absolute; 
+    right: 10px;
+    top:5vh;
+  }
+
+  .fa-sign-out-alt:hover{
+    color: #FB3640;
+  }
+
+  .logo{
+    background:none; 
+    float: left;
+  }
+
+  .select{
+display: none;
+  }
+
+  
+@media (max-width: 1025px) {
+    /* For ipad */
+
+
+
+
+    .fa-sign-out-alt{
+        position: absolute; 
+        right: 10px;
+        top:4vh;
+      }
+  
+}
+        @media (max-width: 390px) {
+    /* For phone */
+
+.user_h1{
+display: none;
+}
+
+.banuser_h1{
+  display: none;
+}
+
+.select{
+  display: block;
+  width: 80%;
+  height: 50px;
+  background-color: #484855;
+  margin-left: 10%;
+  margin-top: 10px;
+    }
+
+  .user{
+  height: 90%;
+  width: 48%;
+  background-color: #FB3640;
+  float: left;
+  margin-top: 3px;
+  margin-left: 3px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding-top: 7px;
+  }
+  .banuser{
+    height: 90%;
+    width: 48%;
+    background-color: #FB3640;
+    float: left;
+    margin-top: 3px;
+    margin-left: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding-top: 7px;
+    }
+
+    .userblock{
+      width: 300px;
+      height: 180px;
+      background-color: #484855;
+      float: left;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+
+    .profileuser{
+      background-color: rgb(255, 255, 255);
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      float: left;
+      margin-top: 40px;
+      margin-left: 20px;
+      
+    }
+    
+    .view{
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 300;
+      float: left;
+      margin-top: -3px;
+      margin-left: 80px;
+    }
+
+
+
+    .ban{
+      border: 2px solid #FB3640;
+      background-color: none;
+      width: 100px;
+      height: 40px;
+      float: right;
+      color: #ffffff;
+      margin-top: 14px;
+      margin-right: 5px;
+      font-size: 20px;
+      text-align: center;
+      padding-top: 3px;
+    }
+
+
+    .fa-sign-out-alt{
+        position: absolute; 
+        right: 10px;
+        top:3vh;
+        
+      } 
+      
+   .logo{
+    width: 70px;
+    height: 70px;  
+    margin-top: 3px;
+   }
+    
+      .profile{
+     background-color: rgb(255, 255, 255);
+     width: 50px;
+     height: 50px;
+     border-radius: 100%;
+     float: right;
+     margin-top: 1vh;
+     margin-right: 50px;
+    
+      }
+  }
+
+  

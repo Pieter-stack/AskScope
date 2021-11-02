@@ -1,20 +1,51 @@
-{% block stylesheets %}<link href="{{ asset('css/questions.css')}}" rel="stylesheet">{% endblock %}
+{% block stylesheets %}<link href="{{ asset('css/que.css')}}" rel="stylesheet">{% endblock %}
 {% block javascripts %}<script src="{{ asset('js/particles.js')}}"></script>{% endblock %}
 {% extends "base.html.twig" %}
 {% block title %}Questions Page {% endblock %}
 {% block nav %}
- <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
- <div class="profile"></div>
+ <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+ <a href="{{ path('edit', {'id': app.user.id}) }}"><img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" /></a>
 
 
 {% endblock %}
 
 {% block body %}
+<div class="container3">
+<a href="/home"><div class="backBtn"><i class="fas fa-chevron-left" style="margin-left:7px;"></i></div></a>
+<h1 class="back">Back to landing page</h1>
+<div class="container2">
+<div class="con">
+<h1 class="question1">Ask a Question?</h1> 
+<div class="text_block">
+{{form_start(form,{'attr':{'novalidate':'novalidate'}})}}
 
+{{form_widget(form.questionText, { 'attr': {'class': 'form-control text border-0', 'placeholder': 'Type here ...', 'style': 'margin: 10px; background-color: #2B2B36; width:95%; resize: none; height:27vh; color:#ffffff; margin-left:2%;'} }) }}
+<div class="con_img">
+<i class="fas fa-upload" style="position:absolute; z-index:1; margin-top:10px; color:#ffffff"></i>
+{{form_widget(form.questionImg, { 'attr': {'class': ' img form-control border-0', 'placeholder': 'questionImg', 'style': 'margin-right:10px; width:50px; background-color: #ffffff; float:left;position:absolute; z-index:2; opacity:0;'} }) }}
+</div>
+{{form_widget(form.category, { 'attr': {'class': 'form-control', 'placeholder': 'category', 'style': 'margin-left: 10%; width:200px; float:right; position:absolute; z-index:3;'} }) }}
+{{form_widget(form.userId, { 'attr': {'class': 'form-control', 'placeholder': 'userid', 'style': 'margin: 10px; display: none', 'value' : app.user.id } }) }}
+<input name="question[userId]" id="question_userId" value={{app.user.id}} style="display:none;">
+
+</div>
+<button class="btn" >{{ button_label|default('POST') }}</button> 
+{{form_end(form)}}
+</div>
+
+</div>
+
+</div>
 
 
 
 {% endblock %}
+
+
+
+
+
+
 
 
 
