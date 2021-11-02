@@ -218,20 +218,8 @@ class AdminController extends AbstractController{
                 ->getRepository(UserProfile::class)
                 ->findBy(['access' => "2"]);
 
-                if($ban){
 
-                    echo $admin_id;
-
-                    // $entityManager = $this->getDoctrine()->getManager();
-
-                    // $access = $userProfile->getAccess();
-                    // $userProfile->setAccess(0);
-                    // $entityManager->persist($userProfile);
-                    // $entityManager->flush();
-
-                    // return $this->redirectToRoute('admin', [], Response::HTTP_SEE_OTHER);
-                }
-
+                return $this->redirectToRoute('admin', [], Response::HTTP_SEE_OTHER);
 
                 $model=array("user" => $user,"ban" => $ban);
             $view = 'admin.html.twig';

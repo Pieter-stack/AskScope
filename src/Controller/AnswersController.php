@@ -42,6 +42,15 @@ class AnswersController extends AbstractController{
                     $dislike = $quest->getDownvotes();
                     $quest->setDownvotes($dislike + 1);
                     $entityManager->flush();
+
+                    $repCount = 0;
+
+                    $UserId = $_POST["userId"];
+                    $entityManager2 = $this->getDoctrine()->getManager();
+                    $rep = $entityManager2->getRepository(UserProfile::class)->find($UserId);
+                    $repCount = $rep->getRep();
+                    $rep->setRep($repCount - 1);
+                    $entityManager2->flush();
   
                     return $dislike + 1;
 
@@ -58,6 +67,15 @@ class AnswersController extends AbstractController{
   
                     return $like + 1;
 
+                    $repCount = 0;
+
+                    $UserId = $_POST["userId"];
+                    $entityManager2 = $this->getDoctrine()->getManager();
+                    $rep = $entityManager2->getRepository(UserProfile::class)->find($UserId);
+                    $repCount = $rep->getRep();
+                    $rep->setRep($repCount + 1);
+                    $entityManager2->flush();
+
 
                 }else if($type == "check"){ 
                     $checkId = $_POST["id"];
@@ -69,6 +87,8 @@ class AnswersController extends AbstractController{
                     $entityManager->flush();
   
                     return $quest;
+
+                   
               
                 }
 

@@ -12,6 +12,7 @@ use Symfony\Component\Security\Core\Security;
      use App\Form\QuestionType;
         //QuestionType entity 
     use App\Entity\Question;
+    use App\Entity\UserProfile;
 
 
 class QuestionsController extends AbstractController{
@@ -49,10 +50,26 @@ if($type == "upvote"){
                         $like = $qlike->getUpvotes();
                         $qlike->setUpvotes($like + 1);
                         $entityManager->flush();
+
+                        $repCount = 0;
+
+                        $UserId = $_POST["userId"];
+                        $entityManager2 = $this->getDoctrine()->getManager();
+                        $rep = $entityManager2->getRepository(UserProfile::class)->find($UserId);
+                        $repCount = $rep->getRep();
+                        $rep->setRep($repCount + 1);
+                        $entityManager2->flush();
        
+                     //   return $repCount + 1;
+
                         return $like + 1;
+
+
+
                         
-                    }else if($type == "downvote"){   
+                        
+                    }
+                    else if($type == "downvote"){   
 
                         
                         $questionId = $_POST["id"];
@@ -63,6 +80,17 @@ if($type == "upvote"){
                         $dislike = $quest->getDownvotes();
                         $quest->setDownvotes($dislike + 1);
                         $entityManager->flush();
+
+                        $repCount = 0;
+
+                        $UserId = $_POST["userId"];
+                        $entityManager2 = $this->getDoctrine()->getManager();
+                        $rep = $entityManager2->getRepository(UserProfile::class)->find($UserId);
+                        $repCount = $rep->getRep();
+                        $rep->setRep($repCount - 1);
+                        $entityManager2->flush();
+       
+                    //    return $repCount - 1;
       
                         return $dislike + 1;
                     }
@@ -115,18 +143,7 @@ if($type == "upvote"){
                     return $this->redirectToRoute('app_login');
                  }
 
-                //  if($username == $session){
-                //     echo "works" ;
-               
-                //  }
 
-             
-
-
-                //if ($new === __)
-                // if ($this->getUser()) {
-                //     return $this->redirectToRoute('index');
-                // }
 
 
                 $questions=$this->getDoctrine()

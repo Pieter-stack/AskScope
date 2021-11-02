@@ -4,8 +4,7 @@
 {% block title %}Admin Page {% endblock %}
 {% block nav %}
  <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
- <img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" />
-
+<a href="{{ path('edit', {'id': app.user.id}) }}"><img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" /></a>
 
 {% endblock %}
 
@@ -17,8 +16,8 @@
 <h1 class="user_h1">Users</h1>
 <h1 class="banuser_h1">Banned Users</h1>
 <div class="select">
-<div id="user" onclick="Users()" class="user">Users</div>
-<div id="banuser" onclick="BannedUsers()" class="banuser">Banned Users</div>
+<div id="user"  class="user">Users</div>
+<div id="banuser" class="banuser">Banned Users</div>
 </div>
 <div id="userblock1" class="users">
 {% for user in user %}
@@ -34,7 +33,6 @@
 
 {% endfor %}
 </div>
-
 <div id="userblock2" class="banned_users">
 {% for ban in ban %}
 <div class="userblock">
@@ -54,9 +52,29 @@
  {% block javascripts %}
 <script>
 
+$(document).ready(function(){
+$(".user ").on("click", function(){
+$(".users").show();
+$(".banned_users").hide();
+
+$(".user").css("background-color", "#F5B82E");
+$(".banuser").css("background-color", "#FB3640");
+
+});
+
+$(".banuser ").on("click", function(){
+$(".users").hide();
+$(".banned_users").show();
+
+$(".user").css("background-color", "#FB3640");
+$(".banuser").css("background-color", "#F5B82E");
+});
+
+});
+
 window.addEventListener('resize', () => {
   var y = document.getElementById("userblock2");
-  var x = document.getElementById("userblock1");
+ var x = document.getElementById("userblock1");
 
       y.style.display = "block";
      x.style.display = "block";
@@ -69,33 +87,7 @@ window.addEventListener('resize', () => {
 
 })
 
-function Users() {
 
-  var y = document.getElementById("userblock2");
-  var x = document.getElementById("userblock1");
-  if (y.style.display === "none") {
-    y.style.display = "block";
-   x.style.display = "none";
-  } else {
-    y.style.display = "none";
-     x.style.display = "block";
-  }
-
-}
-
-
-function BannedUsers() {
-
- var y = document.getElementById("userblock1");
-  var x = document.getElementById("userblock2");
-  if (y.style.display === "none") {
-    y.style.display = "block";
-       x.style.display = "none";
-  } else {
-    y.style.display = "none";
-         x.style.display = "block";
-  }
-}
 
 
 

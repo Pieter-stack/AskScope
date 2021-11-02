@@ -37,14 +37,14 @@
 <h1 class="question"> {{ question.userId.name}}</h1>
 </div>
 <div class="votes">
-<i class="fas fa-arrow-up like"  data-id="{{question.id}}"></i>
+<i class="fas fa-arrow-up like"  data-id="{{question.id}}"  data-user="{{question.userId.id}}" ></i>
 <h1  id="upvote" class="upvote">{{ question.upvotes }} </h1>
-<i class="fas fa-arrow-down dislike" data-id="{{question.id}}" >  </i>
+<i class="fas fa-arrow-down dislike" data-id="{{question.id}}"  data-user="{{question.userId.id}}" >  </i>
 <h1 id="downvote" class="downvote" > {{ question.downvotes }}   </h1>
 <i class="fas fa-comment"></i>
 <h1 class="comment"> {{ question.comments|length }}</h1>
    {% if app.user.access == 1 %}
-<a href="{{ path('delanswers', {'id': question.id}) }}"><i class="fas fa-trash-alt"onclick="return confirm('Are you sure you want to delete this user with id: {{question.id}}');" > </i></a>
+<a href="{{ path('delquestion', {'id': question.id}) }}"><i class="fas fa-trash-alt"onclick="return confirm('Are you sure you want to delete this user with id: {{question.id}}');" > </i></a>
     {% endif %}
 </div>
 </div>
@@ -151,11 +151,13 @@ $(document).ready(function(){
         //  $(this).css("pointer-events", "none");
           $(this).css("color", "#D3D3D3");
         var questionId = $(this).data("id");
+        var UserId = $(this).data("user");
+
             
          $.ajax({
             url: '/home',
             type: 'POST',
-           data: {id:questionId,type:"downvote"},
+           data: {id:questionId,type:"downvote",userId:UserId},
             dataType: 'text',
             async: true,
 
@@ -171,7 +173,8 @@ $(document).ready(function(){
         $(this).next().html(currentCount + 1); 
       
         console.log(currentCount);
-        console.log(questionId);
+        console.log("question" + questionId);
+        console.log(UserId);
 
     });
 
@@ -182,11 +185,11 @@ $(document).ready(function(){
          $(this).css("pointer-events", "none");
           $(this).css("color", "#D3D3D3");
         var LikeId = $(this).data("id");
-            
+        var UserId = $(this).data("user");  
         $.ajax({
           url: '/home',
            type: 'POST',
-          data: {id:LikeId,type:"upvote"},
+          data: {id:LikeId,type:"upvote",userId:UserId},
          dataType: 'text',
         async: true,
 
@@ -204,7 +207,7 @@ $(document).ready(function(){
       
         console.log(currentCount);
         console.log(LikeId);
-
+console.log(UserId);
     });
 
 
