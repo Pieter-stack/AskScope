@@ -6,7 +6,7 @@
 
  <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
      {% if app.user.access == 1 %}
-           <a href="{{ path('admin') }}"><div class="admin">Admin Only</div></a>
+           <a href="/index.php/admin"><div class="admin">Admin Only</div></a>
     {% endif %}
  <a href="{{ path('edit', {'id': app.user.id}) }}"><img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" /></a>
 
@@ -52,7 +52,7 @@
 </div>
 
 </div>
-<a href="/question"><button type="submit" class="btn ">Ask a Question?</button> </a>
+<a href="/index.php/question"><button type="submit" class="btn ">Ask a Question?</button> </a>
 
 {% endblock %}
 
@@ -155,7 +155,7 @@ $(document).ready(function(){
 
             
          $.ajax({
-            url: '/home',
+            url: '/index.php/home',
             type: 'POST',
            data: {id:questionId,type:"downvote",userId:UserId},
             dataType: 'text',
@@ -187,7 +187,7 @@ $(document).ready(function(){
         var LikeId = $(this).data("id");
         var UserId = $(this).data("user");  
         $.ajax({
-          url: '/home',
+          url: '/index.php/home',
            type: 'POST',
           data: {id:LikeId,type:"upvote",userId:UserId},
          dataType: 'text',

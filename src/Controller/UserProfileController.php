@@ -32,7 +32,7 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-           return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login');
         }else{
             return $this->redirectToRoute('app_login');
         }
@@ -107,7 +107,7 @@ class UserProfileController extends AbstractController
              echo $newFilename;
              
               return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
-              
+           //   return $this->redirect("/index.php/home");
         }
            
          }
@@ -126,7 +126,7 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-           return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login');
         }
 
         
@@ -144,7 +144,7 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-           return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login');
         }
 
         $user = $this->getUser();
@@ -211,7 +211,7 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-           return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login');
         }
 
         if ($this->isCsrfTokenValid('delete'.$userProfile->getId(), $request->request->get('_token'))) {

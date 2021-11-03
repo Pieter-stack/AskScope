@@ -115,7 +115,7 @@ class AnswersController extends AbstractController{
                     $entityManager = $this->getDoctrine()->getManager();
                     $entityManager->persist($Comment);
                     $entityManager->flush();
-                    return $this->redirect("/answers/".$id, Response::HTTP_SEE_OTHER);
+                    return $this->redirect("/index.php/answers/".$id, Response::HTTP_SEE_OTHER);
 
                 }
     
@@ -238,7 +238,7 @@ class AnswersController extends AbstractController{
                     $entityManager = $this->getDoctrine()->getManager();
                     $entityManager->persist($Comment);
                     $entityManager->flush();
-                    return $this->redirect("/answers/".$id, Response::HTTP_SEE_OTHER);
+                    return $this->redirect("/index.php/answers/".$id, Response::HTTP_SEE_OTHER);
 
                 }
     
@@ -253,7 +253,7 @@ class AnswersController extends AbstractController{
 
    
 
-                return $this->redirect("/home/", Response::HTTP_SEE_OTHER);
+                return $this->redirect("/index.php/home/", Response::HTTP_SEE_OTHER);
 
     
             //create a modal 

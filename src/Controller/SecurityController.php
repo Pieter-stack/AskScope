@@ -23,9 +23,13 @@ class SecurityController extends AbstractController
         $user = $this->getUser();
 
          if($user ){
-            return $this->redirectToRoute('home');
+            return $this->redirect('/index.php/home');
        
          }
+
+
+
+
 
 
 

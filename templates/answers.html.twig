@@ -2,7 +2,7 @@
 {% extends "base.html.twig" %}
 {% block title %}Answers Page {% endblock %}
 {% block nav %}
- <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+ <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
  <img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" />
 
 
@@ -11,7 +11,7 @@
 
 {% block body %}
 <div class="container3">
-<a href="/home"><div class="backBtn"><i class="fas fa-chevron-left" style="margin-left:7px;"></i></div></a>
+<a href="/index.php/home"><div class="backBtn"><i class="fas fa-chevron-left" style="margin-left:7px;"></i></div></a>
 <h1 class="back">Back to landing page</h1>
 
 </div>
@@ -109,7 +109,7 @@ $(document).ready(function(){
         var answerId = $(this).data("id");
              var UserId = $(this).data("user");   
          $.ajax({
-          url: '/answers',
+          url: '/index.php/answers',
             type: 'POST',
            data: {id:answerId, type: "downvote",userId:UserId},
             dataType: 'text',
@@ -141,7 +141,7 @@ $(document).ready(function(){
         var answerId = $(this).data("id");
           var UserId = $(this).data("user");  
          $.ajax({
-          url: '/answers',
+          url: '/index.php/answers',
             type: 'POST',
            data: {id:answerId, type: "upvote",userId:UserId},
             dataType: 'text',
@@ -173,7 +173,7 @@ $(document).ready(function(){
         var checkId = $(this).data("id");
            
          $.ajax({
-          url: '/answers',
+          url: '/index.php/answers',
             type: 'POST',
            data: {id:checkId, type: "check"},
             dataType: 'text',
