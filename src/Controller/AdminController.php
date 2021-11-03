@@ -32,10 +32,10 @@ class AdminController extends AbstractController{
                  if($user == null){
                     return $this->redirectToRoute('app_login');
                  }
-                 $access = $this->getUser()->getAccess();
-                 if($access !== 1){
-                    return $this->redirectToRoute('app_login');
-                 }
+                //  $access = $this->getUser()->getAccess();
+                //  if($access !== 1){
+                //     return $this->redirectToRoute('app_login');
+                //  }
 
 
             
