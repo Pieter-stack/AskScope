@@ -118,12 +118,6 @@ class UserProfileController extends AbstractController
         ]);
     }
 
-        return $this->renderForm('new.html.twig', [
-            'user_profile' => $userProfile,
-            'form' => $form,
-        ]);
-    }
-
     /**
      * @Route("/{id}", name="show", methods={"GET"})
      */
