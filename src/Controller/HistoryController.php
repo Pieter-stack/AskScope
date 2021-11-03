@@ -36,7 +36,7 @@ class HistoryController extends AbstractController{
 
                 $user = $this->getUser();
                  if($user == null){
-                    return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                  }
                 if($id == null){
                     return $this->redirectToRoute('home');
@@ -44,7 +44,7 @@ class HistoryController extends AbstractController{
 
                 $access = $this->getUser()->getAccess();
                 if($access !== 1){
-                   return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                 }
 
 

@@ -30,11 +30,11 @@ class AdminController extends AbstractController{
                 $user = $this->getUser();
           
                  if($user == null){
-                    return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                  }
                  $access = $this->getUser()->getAccess();
                  if($access !== 1){
-                    return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                  }
 
 
@@ -68,12 +68,12 @@ class AdminController extends AbstractController{
 
                            $user = $this->getUser();
                  if($user == null){
-                    return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                  }
 
                  $access = $this->getUser()->getAccess();
                  if($access !== 1){
-                    return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                  }
 
                 $admin_id = (int) $id;
@@ -134,12 +134,12 @@ class AdminController extends AbstractController{
 
                 $user = $this->getUser();
                 if($user == null){
-                   return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                 }
 
                 $access = $this->getUser()->getAccess();
                 if($access !== 1){
-                   return $this->redirectToRoute('app_login');
+                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
                 }
 
                 $admin_id = (int) $id;
