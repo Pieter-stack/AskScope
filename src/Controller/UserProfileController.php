@@ -106,9 +106,10 @@ class UserProfileController extends AbstractController
 
             
              
-              return $this->redirectToRoute('/', [], Response::HTTP_SEE_OTHER);
+           
            
         }
+        return $this->redirectToRoute('/', [], Response::HTTP_SEE_OTHER);
            
          }
 
