@@ -6,7 +6,7 @@
 
  <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
      {% if app.user.access == 1 %}
-           <a href="{{ path('admin') }}"><div class="admin">Admin Only</div></a>
+           <a href="/index.php/admin"><div class="admin">Admin Only</div></a>
     {% endif %}
  <a href="{{ path('edit', {'id': app.user.id}) }}"><img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" /></a>
 
