@@ -155,7 +155,7 @@ $(document).ready(function(){
 
             
          $.ajax({
-            url: '/home',
+            url: '/index.php/home',
             type: 'POST',
            data: {id:questionId,type:"downvote",userId:UserId},
             dataType: 'text',
@@ -187,7 +187,7 @@ $(document).ready(function(){
         var LikeId = $(this).data("id");
         var UserId = $(this).data("user");  
         $.ajax({
-          url: '/home',
+          url: '/index.php/home',
            type: 'POST',
           data: {id:LikeId,type:"upvote",userId:UserId},
          dataType: 'text',

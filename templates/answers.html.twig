@@ -109,7 +109,7 @@ $(document).ready(function(){
         var answerId = $(this).data("id");
              var UserId = $(this).data("user");   
          $.ajax({
-          url: '/answers',
+          url: '/index.php/answers',
             type: 'POST',
            data: {id:answerId, type: "downvote",userId:UserId},
             dataType: 'text',
@@ -141,7 +141,7 @@ $(document).ready(function(){
         var answerId = $(this).data("id");
           var UserId = $(this).data("user");  
          $.ajax({
-          url: '/answers',
+          url: '/index.php/answers',
             type: 'POST',
            data: {id:answerId, type: "upvote",userId:UserId},
             dataType: 'text',
@@ -173,7 +173,7 @@ $(document).ready(function(){
         var checkId = $(this).data("id");
            
          $.ajax({
-          url: '/answers',
+          url: '/index.php/answers',
             type: 'POST',
            data: {id:checkId, type: "check"},
             dataType: 'text',
