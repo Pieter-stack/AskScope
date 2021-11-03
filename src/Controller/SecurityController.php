@@ -27,6 +27,11 @@ class SecurityController extends AbstractController
        
          }
 
+         if($this->redirect('/index.php/')){
+            
+            return $this->redirect('/');
+         }
+
 
 
 
