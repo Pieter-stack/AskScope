@@ -97,7 +97,7 @@ class AnswersController extends AbstractController{
 
                 $user = $this->getUser();
                  if($user == null){
-                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+                    return $this->redirectToRoute('app_login');
                  }
 
                 if($id == null){
@@ -220,7 +220,7 @@ class AnswersController extends AbstractController{
 
                 $user = $this->getUser();
                  if($user == null){
-                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+                    return $this->redirectToRoute('app_login');
                  }
 
                 if($id == null){

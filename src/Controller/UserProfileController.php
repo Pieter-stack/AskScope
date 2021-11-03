@@ -32,9 +32,9 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-            return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login');
         }else{
-            return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login');
         }
         return $this->render('index.html.twig', [
             'user_profiles' => $defaultRepository->findAll(),
@@ -126,7 +126,7 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-            return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login');
         }
 
         
@@ -144,7 +144,7 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-            return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login');
         }
 
         $user = $this->getUser();
@@ -211,7 +211,7 @@ class UserProfileController extends AbstractController
 
         $user = $this->getUser();
         if($user == null){
-            return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login');
         }
 
         if ($this->isCsrfTokenValid('delete'.$userProfile->getId(), $request->request->get('_token'))) {

@@ -30,7 +30,7 @@ class QuestionsController extends AbstractController{
                 $session = $request->getSession()->get(Security::LAST_USERNAME);
                 // $user = $sessio;
                  if($user == null){
-                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+                    return $this->redirectToRoute('app_login');
                  }
 
 
@@ -140,7 +140,7 @@ if($type == "upvote"){
                 $session = $request->getSession()->get(Security::LAST_USERNAME);
                 // $user = $sessio;
                  if($user == null){
-                    return new RedirectResponse("/", Response::HTTP_SEE_OTHER);
+                    return $this->redirectToRoute('app_login');
                  }
 
 
