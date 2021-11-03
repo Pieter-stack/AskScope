@@ -3,7 +3,7 @@
 {% extends "base.html.twig" %}
 {% block title %}Signup Page {% endblock %}
 {% block nav %}
- <a href="/"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+ <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
  <img class="profile" src="{{ asset( '/profileUrl/' ~ app.user.profileUrl ) }}" />
 
 

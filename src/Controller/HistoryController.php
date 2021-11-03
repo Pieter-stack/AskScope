@@ -42,6 +42,11 @@ class HistoryController extends AbstractController{
                     return $this->redirectToRoute('home');
                 }
 
+                $access = $this->getUser()->getAccess();
+                if($access !== 1){
+                   return $this->redirectToRoute('app_login');
+                }
+
 
                 $history_id = (int) $id;
 

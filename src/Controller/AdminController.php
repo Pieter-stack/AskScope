@@ -28,7 +28,12 @@ class AdminController extends AbstractController{
             public function Admin(){
 
                 $user = $this->getUser();
+          
                  if($user == null){
+                    return $this->redirectToRoute('app_login');
+                 }
+                 $access = $this->getUser()->getAccess();
+                 if($access !== 1){
                     return $this->redirectToRoute('app_login');
                  }
 
@@ -63,6 +68,11 @@ class AdminController extends AbstractController{
 
                            $user = $this->getUser();
                  if($user == null){
+                    return $this->redirectToRoute('app_login');
+                 }
+
+                 $access = $this->getUser()->getAccess();
+                 if($access !== 1){
                     return $this->redirectToRoute('app_login');
                  }
 
@@ -124,6 +134,11 @@ class AdminController extends AbstractController{
 
                 $user = $this->getUser();
                 if($user == null){
+                   return $this->redirectToRoute('app_login');
+                }
+
+                $access = $this->getUser()->getAccess();
+                if($access !== 1){
                    return $this->redirectToRoute('app_login');
                 }
 

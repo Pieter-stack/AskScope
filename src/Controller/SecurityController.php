@@ -27,6 +27,11 @@ class SecurityController extends AbstractController
        
          }
 
+         if(!$user ){
+            return $this->redirect('/');
+       
+         }
+
 
 
 
