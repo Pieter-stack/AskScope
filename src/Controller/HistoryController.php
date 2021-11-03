@@ -43,9 +43,9 @@ class HistoryController extends AbstractController{
                 }
 
                 $access = $this->getUser()->getAccess();
-                if($access !== 1){
+                if($access !== "1"){
                     return $this->redirectToRoute('app_login');
-                }
+                 }
 
 
                 $history_id = (int) $id;

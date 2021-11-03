@@ -72,7 +72,7 @@ class AdminController extends AbstractController{
                  }
 
                  $access = $this->getUser()->getAccess();
-                 if($access !== 1){
+                 if($access !== "1"){
                     return $this->redirectToRoute('app_login');
                  }
 
@@ -138,9 +138,9 @@ class AdminController extends AbstractController{
                 }
 
                 $access = $this->getUser()->getAccess();
-                if($access !== 1){
-                   return $this->redirectToRoute('app_login');
-                }
+                if($access !== "1"){
+                    return $this->redirectToRoute('app_login');
+                 }
 
                 $admin_id = (int) $id;
 
@@ -210,7 +210,10 @@ class AdminController extends AbstractController{
                 ->find($admin_id );
 
 
-
+                $access = $this->getUser()->getAccess();
+                if($access !== "1"){
+                    return $this->redirectToRoute('app_login');
+                 }
                
 
 
