@@ -50,9 +50,9 @@ class UserProfile implements UserInterface{
     private $rep = 1000;
 
     /**
-    * @ORM\Column(type="integer" , length=255, name="access", nullable=false, options={"default" : 0})
+    * @ORM\Column(type="integer" , length=255, name="access", nullable=false, options={"default" : 1})
     */
-    private $access = 0;
+    private $access = 1;
 
     /**
      * @ORM\OneToMany(targetEntity=Question::class, mappedBy="user_id")

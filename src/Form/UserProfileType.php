@@ -25,7 +25,7 @@ class UserProfileType extends AbstractType
             ->add('password',PasswordType::class)
             ->add('profileUrl',FileType::class, array('data_class' => null))
             ->add('rep')
-            ->add('access',TextType::class, array('data_class' => null))
+            ->add('access')
         ;
     }
 
