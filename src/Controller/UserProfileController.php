@@ -107,7 +107,7 @@ class UserProfileController extends AbstractController
              echo $newFilename;
              
               return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
-              
+           //   return $this->redirect("/index.php/home");
         }
            
          }
