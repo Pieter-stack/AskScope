@@ -13,7 +13,7 @@
 </br>
 
   <a href="https://github.com/Pieter-stack/AskScope">
-    <img src="Images/App Icon.png" alt="Logo" width="140" height="140">
+    <img src="images/Logo.png" alt="Logo" width="140" height="140">
   </a>
 
   <h3 align="center">AskScope</h3>
@@ -43,7 +43,6 @@
    * [Features](#features)
    * [Functionality](#functionality)
 * [Concept Process](#concept-process)
-   * [Ideation](#ideation)
    * [Wireframes](#wireframes)
    * [User-flow](#user-flow)
 * [Development Process](#development-process)
@@ -59,6 +58,7 @@
 ## About the Project
 
 <!--![image1][image1]-->
+   <img src="images/website.png" alt="website" width="100%" height="500">
 
 ### Project Description
 
@@ -90,7 +90,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Ensure that you have the latest version of Android Studio installed on your machine. The Kotlin plugin will also be required.
+Ensure that you have the latest version of PHP installed on your machine.
 
 ### How to install
 
@@ -170,41 +170,29 @@ $symfony server:start
 ## Features and Functionality
 
 ### Features
+   <img src="images/Mockup1 phones.png" alt="website" width="100%" height="500">
 
-### Features to be listed soon
-
-Features will be listed here in the near future.
 
 <!--![image2][image2]-->
-
-<!--![image3][image3]-->
-
-<!--![image4][image4]-->
+   <img src="images/mockup 2 ipad.png" alt="website" width="100%" height="500">
 
 ### Functionality
-
-### Functionality to be listed soon
-
-Functionality will be listed here in the near future.
+The user can create their own account and signinto the website and also logout.The user can also post questions and reply to questions as comments. Questions and COmments can be downvoted and upvoted and comments can be marked as helpful, Admin can ban and unban users and also delete users, comments and questions
 
 <!-- CONCEPT PROCESS -->
 ## Concept Process
 
 The `Conceptual Process` is the set of actions, activities and research that was done when starting this project.
 
-### Ideation
-
-<!--![image5][image5]-->
-<br>
-<!--![image6][image6]-->
 
 ### Wireframes
-
+   <img src="images/wireframes.PNG" alt="website" width="100%" height="500">
 <!--![image7][image7]-->
 
 ### User-flow
 
 <!--![image8][image8]-->
+ <img src="images/userflow.png" alt="website" width="100%" height="500">
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -213,17 +201,26 @@ The `Development Process` is the technical implementations and functionality don
 
 ### Implementation
 
+
+1. Firstly I made the Login and Register page, where the user can signup and be posted to the db and the login to the website I also added a logout feature.
+2. I then did the CRUD functionality of editing user data and posting questions and comments. I later did the CRUD for the Admin where you can delete , ban and unban users.
+3. For the AJAX requests, I used them to upvote and downvote comments and questions as well as mark comments as an answer.
+4. I then Finished the project off with some styling and uploaded it to heroku.
+
+
 #### Challenges
 
-Challenges will be listed here in the near future.
+Had issues with deploying to heroku but got it sorted at the end.
 
 
 <!-- MOCKUPS -->
 ## Mockups
 
 <!--![image9][image9]-->
+   <img src="images/mockup4.png" alt="website" width="100%" height="500">
 <br>
 <!--![image10][image10]-->
+   <img src="images/mockup 5.png" alt="website" width="100%" height="500">
 
 
 
