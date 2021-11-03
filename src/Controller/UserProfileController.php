@@ -86,32 +86,37 @@ class UserProfileController extends AbstractController
 
             $id = $userProfile->getId();
 //https://symfony.com/doc/current/controller/upload_file.html
-            $profileUrl = $form->get('profileUrl')->getData();
+               $profileUrl = $form->get('profileUrl')->getData();
 
-            if ($profileUrl) {
-                $originalFilename = pathinfo($profileUrl->getClientOriginalName(), PATHINFO_FILENAME);
-                 $newFilename = time() .'_'. uniqid().'.'.$profileUrl->guessExtension();
-                try {
-                    $profileUrl->move(
-                        $this->getParameter('profile_directory'),
-                        $newFilename
-                    );
-                 } catch (FileException $e) {
+               if ($profileUrl) {
+                   $originalFilename = pathinfo($profileUrl->getClientOriginalName(), PATHINFO_FILENAME);
+                    $newFilename = time() .'_'. uniqid().'.'.$profileUrl->guessExtension();
+                   try {
+                       $profileUrl->move(
+                           $this->getParameter('profile_directory'),
+                           $newFilename
+                       );
+                    } catch (FileException $e) {
+                   }
+                      $userProfile->setprofileUrl($newFilename); 
+                      $entityManager = $this->getDoctrine()->getManager();
+                      $entityManager->persist($userProfile);
+                      $entityManager->flush();     
                 }
-                   $userProfile->setprofileUrl($newFilename); 
-                   $entityManager = $this->getDoctrine()->getManager();
-                   $entityManager->persist($userProfile);
-                   $entityManager->flush();     
-             }
 
-            
+             echo $newFilename;
              
-           
-           
+              return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
+           //   return $this->redirect("/index.php/home");
         }
-        return $this->redirectToRoute('/', [], Response::HTTP_SEE_OTHER);
            
          }
+
+        return $this->renderForm('new.html.twig', [
+            'user_profile' => $userProfile,
+            'form' => $form,
+        ]);
+    }
 
         return $this->renderForm('new.html.twig', [
             'user_profile' => $userProfile,
