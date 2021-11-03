@@ -20,7 +20,7 @@ class QuestionsController extends AbstractController{
         
             /**
              **
-             *@Route("/index.php/home",name="home")
+             *@Route("/home",name="home")
              */
 
             public function Questions(Request $request){
